@@ -8,15 +8,20 @@ public class Butterfly
     // Every new butterfly starts as an egg on level 1.
     private const int StartLevel = 1;
 
+    // XP needed to reach each stage.
+    private const int LarvaXp = 10;
+    private const int PupaXp = 20;
+    private const int AdultXp = 30;
+
     public string Name { get; }
     public int Xp { get; private set; }
 
     public int Level => Xp switch
     {
-        >= 30 => 4,          // Butterfly
-        >= 20 => 3,          // Pupa
-        >= 10 => 2,          // Larva
-        _     => StartLevel  // Egg
+        >= AdultXp => 4,
+        >= PupaXp  => 3,
+        >= LarvaXp => 2,
+        _          => StartLevel
     };
 
     public Butterfly(string name)
