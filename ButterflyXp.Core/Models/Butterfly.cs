@@ -31,6 +31,11 @@ public class Butterfly
 
     public void AddXp(int amount)
     {
+        if (amount <= 0)
+        {
+            throw new ArgumentOutOfRangeException(nameof(amount), "XP must be greater than 0.");
+        }
+
         Xp += amount;
     }
 }
