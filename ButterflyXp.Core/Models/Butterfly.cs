@@ -10,7 +10,14 @@ public class Butterfly
 
     public string Name { get; }
     public int Xp { get; private set; }
-    public int Level => StartLevel;
+
+    public int Level => Xp switch
+    {
+        >= 30 => 4,          // Butterfly
+        >= 20 => 3,          // Pupa
+        >= 10 => 2,          // Larva
+        _     => StartLevel  // Egg
+    };
 
     public Butterfly(string name)
     {
