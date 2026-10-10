@@ -13,6 +13,7 @@ public class Butterfly
     private const int PupaXp = 20;
     private const int AdultXp = 30;
 
+    public Guid Id { get; } = Guid.NewGuid();
     public string Name { get; }
     public int Xp { get; private set; }
 
@@ -28,11 +29,11 @@ public class Butterfly
     {
         Name = name;
     }
-public void AddXp(int amount)
+
+    public void AddXp(int amount)
     {
         ArgumentOutOfRangeException.ThrowIfNegativeOrZero(amount);
 
         Xp += amount;
     }
-    
 }
