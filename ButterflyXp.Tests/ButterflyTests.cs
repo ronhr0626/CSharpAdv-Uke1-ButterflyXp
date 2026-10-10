@@ -24,4 +24,18 @@ public class ButterflyTests
 
         Assert.Equal(5, butterfly.Xp);
     }
+
+    [Theory]
+    [InlineData(9, 1)]
+    [InlineData(10, 2)]
+    [InlineData(20, 3)]
+    [InlineData(30, 4)]
+    public void AddXp_LevelsUpAtThresholds(int xp, int expectedLevel)
+    {
+        var butterfly = CreateButterfly();
+
+        butterfly.AddXp(xp);
+
+        Assert.Equal(expectedLevel, butterfly.Level);
+    }
 }
