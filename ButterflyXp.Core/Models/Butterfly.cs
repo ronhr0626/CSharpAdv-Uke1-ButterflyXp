@@ -9,11 +9,16 @@ public class Butterfly
     private const int StartLevel = 1;
 
     public string Name { get; }
-    public int Xp { get; }
+    public int Xp { get; private set; }
     public int Level => StartLevel;
 
     public Butterfly(string name)
     {
         Name = name;
+    }
+
+    public void AddXp(int amount)
+    {
+        Xp += amount;
     }
 }
