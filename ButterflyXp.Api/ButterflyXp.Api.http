@@ -1,0 +1,6 @@
+@ButterflyXp.Api_HostAddress = http://localhost:5292
+
+GET {{ButterflyXp.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
