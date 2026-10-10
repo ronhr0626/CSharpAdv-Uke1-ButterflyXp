@@ -38,4 +38,14 @@ public class ButterflyTests
 
         Assert.Equal(expectedLevel, butterfly.Level);
     }
+
+        [Theory]
+    [InlineData(0)]
+    [InlineData(-5)]
+    public void AddXp_ZeroOrNegative_Throws(int amount)
+    {
+        var butterfly = CreateButterfly();
+
+        Assert.Throws<ArgumentOutOfRangeException>(() => butterfly.AddXp(amount));
+    }
 }
