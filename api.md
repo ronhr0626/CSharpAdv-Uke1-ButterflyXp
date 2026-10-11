@@ -11,7 +11,7 @@ Response: **201 Created**
 ```json
 { "id": "3f2a…", "name": "Flora", "xp": 0, "level": 1 }
 ```
-- 400 Bad Request – name is missing
+
 
 ## PATCH /butterflies/{id}/xp
 Give XP to a butterfly.
